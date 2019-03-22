@@ -8,7 +8,7 @@ import axios from 'axios'
 Vue.prototype.$axios=axios
 
 Vue.config.productionTip = false
-//啊飒飒
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

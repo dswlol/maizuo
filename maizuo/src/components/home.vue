@@ -2,7 +2,7 @@
   <div class="home">
     <router-view/>
     <!--home导航栏-->
-    <ul>
+    <ul class="nav">
     	<!--<li><router-link to='/'><i class="fa fa-instagram" aria-hidden="true"></i><span>电影</span></router-link></li>
 			<li><router-link to='/home/cinema'><i class="fa fa-th" aria-hidden="true"></i><span>影院</span></router-link></li>
 			<li><router-link to='/home/shop'><i class="fa fa-shopping-basket" aria-hidden="true"></i><span>特惠</span></router-link></li>
@@ -57,27 +57,36 @@ export default {
 }
 </script>
 
-<style scoped>
-	ul{
+<style scoped lang="scss">
+	/*设置导航样式*/
+	.nav{
 		position: fixed;
 		width: 100%;
 		bottom: 0;	
 		display: flex;
 		text-align: center;	
 		border-top: 1px solid #eee;
-	}
-	ul li{
-		flex: 1;
-	}
-	ul li a{
-		display: flex;
-		width: 100%;
-		height: 100%;
-		flex-direction: column;
-		justify-content: center;
-		color: #797d82;
+		padding-top: 0.2rem;
+		li{
+			flex: 1;
+			a{
+				display: flex;
+				width: 100%;
+				height: 100%;
+				flex-direction: column;
+				justify-content: center;
+				color: #797d82;
+				font-size: 0.4rem;
+				i {
+					font-size: 0.6rem;
+				}
+				span {
+					padding-bottom: 0.1rem;
+				}
+			}
+		}
 	}
 	.ys{
-		color: #ff5f16;
+		color: #ff5f16!important;
 	}
 </style>
