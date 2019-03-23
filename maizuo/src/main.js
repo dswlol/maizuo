@@ -6,7 +6,8 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 Vue.prototype.$axios=axios
-
+axios.defaults.baseURL="/api"
+axios.defaults.headers.post['Content-type']="application/json";
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
