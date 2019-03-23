@@ -11,6 +11,8 @@ import Cinema from '@/page/cinema/cinema'
 import Shop from '@/page/shop/shop'
 //用户组件引用
 import User from '@/page/user/user'
+import denglu from '@/page/user/denglu'
+import zc from '@/page/user/zc'
 
 Vue.use(Router)
 
@@ -58,11 +60,20 @@ export default new Router({
 		    {
 		    	path:'/home/user',
 		    	name:'user',
-		    	component:User
-		    }
+		    	component:User		    	
+		    },	    
+		    	{
+		    		path:'/home/user/denglu',
+		    		component:denglu,
+		    		children:[
+		    			{
+				    		path:'/home/user/denglu/zc',
+				    		component:denglu
+				    	}
+		    		]
+		    	}	,
+		    	
       ]
-    },
-    
-    
+    },       
   ]
 })
