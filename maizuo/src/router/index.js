@@ -5,6 +5,7 @@ import Home from '@/components/home'
 import Index from '@/page/index/index'
 import NowPlaying from '@/page/index/nowplaying'
 import ComingSoon from '@/page/index/comingsoon'
+import Detail from '@/page/index/detail'
 //影院组件引用
 import Cinema from '@/page/cinema/cinema'
 //购物组件引用
@@ -42,8 +43,14 @@ export default new Router({
       		 		path:'/home/index/comingsoon',
       		 		name:'comingsoon',
       		 		component:ComingSoon
-      		 	}
+      		 	}    		 	
       		 ]
+      	},
+      	{
+      		//电影详情路由
+      		 path:'/home/detail/:index',
+      		 name:'detail',
+      		 component:Detail
       	},
       	{
 		    	path:'/home/cinema',

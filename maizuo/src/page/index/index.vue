@@ -3,7 +3,7 @@
 		<!--轮播-->
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
-		        <div class="swiper-slide" v-for='item in pic'><router-link to="/"><img  v-bind:src="item.url"/></router-link></div>
+		        <div class="swiper-slide" v-for='item in mz.pic'><router-link to="/"><img  v-bind:src="item.url"/></router-link></div>
 		    </div>
 		</div>
 		<!--导航-->
@@ -17,36 +17,24 @@
 </template>
 
 <script>
+	//映射数据
+	import {mapState,mapMutations,mapActions,mapGetters} from 'Vuex'
+	
 	//引入轮播模块
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.css'
 	
+	
 	export default{
 		data(){
 			return{
-				pic:[
-					{
-						url:require('../../assets/img/lb/one1.png')
-					},
-					{
-						url:require('../../assets/img/lb/two.png')
-					},
-					{
-						url:require('../../assets/img/lb/three.png')
-					},
-					{
-						url:require('../../assets/img/lb/four.png')
-					},
-					{
-						url:require('../../assets/img/lb/five.png')
-					},
-					{
-						url:require('../../assets/img/lb/six.png')
-					}
-				]
 			}
 		},
+		computed:{
+			...mapState(["mz","pic"])
+		},
 		mounted(){
+			//轮播
 	        var mySwiper = new Swiper('.swiper-container', {
 	          autoplay:true,
 	          loop:true
@@ -78,7 +66,7 @@
 		}
 	}
 	.router-link-exact-active span{
-		color: #ff5f16;
+		color: #ff5f16!important;
 		border-bottom: 2px solid #ff5f16;
 	}
 	/*轮播设置*/
