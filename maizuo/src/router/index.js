@@ -13,6 +13,10 @@ import Shop from '@/page/shop/shop'
 import User from '@/page/user/user'
 import denglu from '@/page/user/denglu'
 import zc from '@/page/user/zc'
+import succsee from '@/page/user/succsee'
+import more from '@/page/user/more'
+import data from '@/page/user/data'
+
 
 Vue.use(Router)
 
@@ -64,15 +68,24 @@ export default new Router({
 		    },	    
 		    	{
 		    		path:'/home/user/denglu',
-		    		component:denglu,
-		    		children:[
-		    			{
-				    		path:'/home/user/denglu/zc',
-				    		component:denglu
-				    	}
-		    		]
-		    	}	,
-		    	
+		    		component:denglu
+		    	},
+		    	{
+				    		path:'/home/user/zc',
+				    		component:zc
+				   },
+				   {
+				   	path:'/home/user/succsee',
+				    		component:succsee
+				   },
+				   {
+				   	path:'/home/user/more',
+				    		component:more
+				   },
+				   {
+				   	path:'/home/user/data',
+				    		component:data
+				   }
       ]
     },       
   ]
