@@ -10,9 +10,16 @@
 				<div :class="{'check':toggle}"><span>{{item.summary}}</span></div>
 				<div @click="toggle=!toggle"><i v-if="toggle" class="fa fa-angle-down" aria-hidden="true"></i><i v-else class="fa fa-angle-up" aria-hidden="true"></i></div>
 			</section>
+			<div>
+				<p>演职人员</p>
+				<ul>
+					<li v-for="(pic,index) in item.yy"><router-link to=""><img :src="pic"/><span>{{item.act[index]}}</span></router-link></li>
+				</ul>
+			</div>
 			
 			
 		</div>
+		<router-link to="" class="titck"><span>选票购座</span></router-link>
 	</div>
 </template>
 
@@ -118,10 +125,57 @@
 					color: #797d82;	
 				}
 			}
+			section+div{
+				padding: 0.4rem;
+				p{
+					font-size: 0.5rem;
+				}
+				ul{
+					/*设置横向滚动条*/
+					width: 100%;
+					white-space: nowrap;
+					display: inline;
+					overflow-x:scroll;
+					float:left;
+					margin-top: 0.4rem;
+					li{
+						 display:inline-block;
+						 margin: 0 0.2rem;
+						 text-align: center;
+						img{
+							width: 2.5rem;
+							height: 2.5rem;
+							display: block;
+						}
+						span{
+							margin-top: 0.3rem;
+							display: block;
+							font-size: 0.3rem;
+							color: #000;
+						}
+					}
+				}
+			}
 			
 		}
 	}
 	.check{
 		height: 1.1rem;
+	}
+	.titck{
+		display: block;
+		width: 100%;
+		text-align: center;
+		box-sizing: border-box;
+		padding: 0 0.3rem;	
+		margin-top: 4rem;	
+		margin-bottom: 2rem;	
+		clear: both;
+		span{
+			display: block;
+			color: #fff;
+			background-color: #ff5f16;
+			font-size: 0.8rem;
+		}
 	}
 </style>

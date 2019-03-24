@@ -1,11 +1,5 @@
 <template>
 	<div>
-		<!--<router-link to="" v-for="item in mz.now" class="show">
-			<div><img :src="item.url"/></div>
-			<div>
-				<div><span>{{item.name}}</span><span>{{item.dimensional}}</span></div>
-			</div>
-		</router-link>-->
 		<ul class="show">
 			<li v-for="item in mz.now">
 				<router-link :to="'/home/detail/'+item.id">
@@ -40,6 +34,7 @@
 
 <style scoped lang="scss"> 
 	.show{
+		margin-bottom: 2rem;
 		li{	
 			padding: 0.4rem 0.4rem 0.4rem 0;
 			margin-left: 0.4rem;

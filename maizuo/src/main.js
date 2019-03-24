@@ -3,12 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
-=======
+//=======
 import store from './store'
->>>>>>> d48857c4bcba3e991b156279fd2adc2e3ff44b9b
+//>>>>>>> d48857c4bcba3e991b156279fd2adc2e3ff44b9b
 import axios from 'axios'
 Vue.prototype.$axios=axios
 axios.defaults.baseURL="/api"
