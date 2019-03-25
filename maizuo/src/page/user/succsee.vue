@@ -14,13 +14,13 @@
 		<div class="indent">
 			<ul>
 				<li>
-					<router-link to="/home/user/more">
+					<router-link to="/home/user/data">
 						<img src="../../assets/img/user/2.png" />
 						<p>电影订单</p>
 					</router-link>
 				</li>
 				<li>
-					<router-link to="/home/user/more">
+					<router-link to="/home/user/data">
 						<img src="../../assets/img/user/3.png" />
 						<p>拼团订单</p>
 					</router-link>
@@ -30,8 +30,8 @@
 		
 		<div class="list">
 			<ul>
-				<li v-for="item in list">
-					<router-link to="/home/user/more">
+				<li v-for="(item,index) in list">
+					<router-link :to="'/home/user/more/'+index">
 						<img :src="item.url"/>
 						<span>{{item.nr}}</span>
 						<b>{{item.wz}}</b>
@@ -55,22 +55,26 @@
 					{
 						url:require('../../assets/img/user/4.png'),
 						nr:'卖座卡',
-						wz:'>'
+						wz:'>',
+						id:'0'
 					},
 					{
 						url:require('../../assets/img/user/5.png'),
 						nr:'组合红包',
-						wz:'>'
+						wz:'>',
+						id:'1'
 					},
 					{
 						url:require('../../assets/img/user/6.png'),
 						nr:'余额',
-						wz:'>'
+						wz:'>',
+						id:'2'
 					},
 					{
 						url:require('../../assets/img/user/7.png'),
 						nr:'设置',
-						wz:'>'
+						wz:'>',
+						id:'3'
 					}
 				]
 			}

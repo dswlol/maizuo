@@ -86,7 +86,7 @@ export default new Router({
 				    		component:succsee
 				   },
 				   {
-				   	path:'/home/user/more',
+				   	path:'/home/user/more/:index',
 				    		component:more
 				   },
 				   {
