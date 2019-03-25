@@ -17,14 +17,14 @@
 </template>
 
 <script>
+	
 	//映射数据
 	import {mapState,mapMutations,mapActions,mapGetters} from 'Vuex'
 	
 	//引入轮播模块
 	import Swiper from 'swiper';
 	import 'swiper/dist/css/swiper.css'
-	
-	
+		
 	export default{
 		data(){
 			return{

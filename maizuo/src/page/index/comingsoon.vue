@@ -2,7 +2,7 @@
 	<div>
 		<ul class="show">
 			<li v-for="item in mz.now">
-				<router-link :to="'/home/detail/'+item.id">
+				<router-link :to="'/home/detail/'+item.Id">
 					<div><img :src="item.url"/></div>
 					<div class="right">
 						<div><span>{{item.name}}</span><span>{{item.dimensional}}</span></div>

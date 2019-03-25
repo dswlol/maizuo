@@ -1,5 +1,6 @@
 <template>
 	<div class="show">
+		<back class="back" />
 		<div v-for="item in list">
 			<div><img :src="item.banner"/></div>
 			<section>
@@ -24,8 +25,14 @@
 </template>
 
 <script>
+	//引入返回
+	import back from '../../components/back'
+	
 	import {mapState,mapMutations,mapActions,mapGetters} from 'Vuex'
 	export default{
+		components:{
+			back
+		},
 		data(){
 			return{
 				toggle:true,
@@ -46,7 +53,6 @@
 		},
 		created(){
 			this.list.push(this.mz.now[this.n])
-			console.log(this.list)
 		}
 	}
 	
@@ -177,5 +183,19 @@
 			background-color: #ff5f16;
 			font-size: 0.8rem;
 		}
+	}
+	.back{
+		text-align: center;
+		position: fixed;
+		font-size: 0.5rem;
+		background: rgba(0,0,0,0.3);
+		left: 0.3rem;
+		top: 0.3rem;
+		width: 1rem;
+		height: 1rem;
+		line-height: 1rem;
+		border-radius: 50%;
+		color: #fff;
+		font-weight:400;
 	}
 </style>
