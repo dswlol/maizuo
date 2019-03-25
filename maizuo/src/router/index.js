@@ -1,4 +1,4 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
 //首页组件引用
@@ -17,6 +17,8 @@ import zc from '@/page/user/zc'
 import succsee from '@/page/user/succsee'
 import more from '@/page/user/more'
 import data from '@/page/user/data'
+//ly购物引用
+import Go from '@/page/shop/go'
 
 
 Vue.use(Router)
@@ -72,7 +74,12 @@ export default new Router({
 		    	path:'/home/user',
 		    	name:'user',
 		    	component:User		    	
-		    },	    
+		    },	//ly购物车
+		   {
+			path:'/home/go',
+		    	name:'go',
+		    	component:Go
+		     },    
 		    	{
 		    		path:'/home/user/denglu',
 		    		component:denglu

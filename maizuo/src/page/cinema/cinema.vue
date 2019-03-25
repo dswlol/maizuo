@@ -16,14 +16,14 @@
 			</div>
 		</section>
 		<ul>
-			<li v-for="(item,index) in list" class="box">
+			<li v-for="(item,index) in list" class="box" :key="index">
 				<router-link :to="'/home/detail/'+index">
 				<div class="left">
-					<p>{{item.name}}</p>
+					<p class="zi">{{item.name}}</p>
 					<p>{{item.address}}</p>
 				</div>
 				<div class="right">
-					<p>￥33起</p>
+					<p><span>￥</span>33<span>起</span></p>
 					<p>1.36km</p>
 				</div>
 				</router-link>
@@ -92,7 +92,7 @@
 	.left p:nth-of-type(2){
 		font-size: 12px;
 		color: #797D82;
-		width: 250px;
+		width: 230px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -105,5 +105,14 @@
 	.right p:nth-of-type(2){
 		font-size: 12px;
 		color: #797D82;
+	}
+	.zi{
+		color: #333;	
+	}
+	p{
+		line-height: .8rem;
+	}
+	p span{
+		font-size: .4rem;
 	}
 </style>
