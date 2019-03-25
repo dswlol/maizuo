@@ -32,7 +32,8 @@
 				<p>{{item.p}}</p>
 			</div>
 		</div>
-		<div class="more3" v-for="item in list[3]" v-if="n==3">
+		<div class="more31">
+			<div class="more3" v-for="item in list[3]" v-if="n==3">
 			<div>{{item.name}}</div>
 			<div>
 				<span>{{item.p}}</span>
@@ -69,6 +70,9 @@
 				</p>
 			</div>
 		</div>
+		</div>
+		
+		
 		<div class="more4"></div>
 	</div>
 </template>
@@ -129,7 +133,7 @@
 
 <style lang="scss" scoped>
 	.more{
-		background: #f4f4f4;
+		
 		.more0{
 			div:nth-of-type(1){
 				font-size: 0.58rem;
@@ -213,7 +217,9 @@
 				}
 			}
 		}
-		.more3{
+		.more31{
+			background: #F4F4F4;
+			.more3{
 			div:nth-of-type(1){
 				font-size: 0.58rem;
 				text-align: center;
@@ -286,6 +292,8 @@
 				}
 			}
 		}
+		}
+		
 		.more4{
 			height: 1px;
 			margin-top: 6rem;
