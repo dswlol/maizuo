@@ -1,6 +1,8 @@
 ﻿import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
+//引用日期组件
+import Positon from '@/components/position'
 //首页组件引用
 import Index from '@/page/index/index'
 import NowPlaying from '@/page/index/nowplaying'
@@ -20,7 +22,6 @@ import data from '@/page/user/data'
 //ly购物引用
 import Go from '@/page/shop/go'
 
-
 Vue.use(Router)
 
 export default new Router({
@@ -37,7 +38,7 @@ export default new Router({
       component: Home,
       children:[
       	{
-      		 path:'/home/index',
+      		 path:'/home/index/:city',
       		 name:'index',
       		 component:Index,
       		 redirect:{'name':'nowplaying'},
@@ -53,6 +54,11 @@ export default new Router({
       		 		component:ComingSoon
       		 	}    		 	
       		 ]
+      	},
+      	{
+      		path:"/home/position",
+      		name:'positon',
+      		component:Positon
       	},
       	{
       		//电影详情路由

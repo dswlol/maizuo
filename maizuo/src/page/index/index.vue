@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<router-link class="position" to="/home/position"><i class="fa fa-dot-circle-o" aria-hidden="true"> {{city}} </i></router-link>
 		<!--轮播-->
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
@@ -28,6 +29,7 @@
 	export default{
 		data(){
 			return{
+				city:'重庆'
 			}
 		},
 		computed:{
@@ -39,7 +41,19 @@
 	          autoplay:true,
 	          loop:true
 	        })
-	    }
+	   },
+	   methods:{
+	   		citypsin(){
+	   			if(this.$route.params.city){
+	   				this.city=this.$route.params.city
+	   			}
+	   			
+	   		}
+	   },
+	   created(){
+	   		this.citypsin();
+	   }
+	  
 	}
 </script>
 
@@ -75,5 +89,20 @@
 			display: block;
 			width: 100%;
 		}
+	}
+	/*定位*/
+	.position{
+		    position: absolute;
+		    top: 18px;
+		    left: 7px;
+		    color: #fff;
+		    z-index: 10;
+		    font-size: 13px;
+		    background: rgba(0,0,0,.2);
+		    height: 30px;
+		    line-height: 30px;
+		    border-radius: 15px;
+		    text-align: center;
+		    padding: 0 5px;
 	}
 </style>

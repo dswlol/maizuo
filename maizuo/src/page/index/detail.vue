@@ -186,11 +186,11 @@
 	}
 	.back{
 		text-align: center;
-		position: fixed;
+		position: absolute;
+	    top: 5px;
+	    left: 5px;
 		font-size: 0.5rem;
-		background: rgba(0,0,0,0.3);
-		left: 0.3rem;
-		top: 0.3rem;
+		background-color: hsla(0,0%,100%,0);
 		width: 1rem;
 		height: 1rem;
 		line-height: 1rem;
