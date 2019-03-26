@@ -7,17 +7,17 @@ const path = require('path')
 module.exports = {
   dev: {
 
-    // Paths
+    // Pathshttp://47.102.208.83:3000/findInfo
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      	  	"/api":{
-    				"target":"http://10.40.152.61:3000",
-    				"changeOrigin":true,
-    				"pathRewrite":{
-    				"^/api":""
-    		}   		
-    	}  
+      	//   	"/api":{
+    		// 		"target":"http://47.102.208.83:3000",
+    		// 		"changeOrigin":true,
+    		// 		"pathRewrite":{
+    		// 		"^/api":""
+    		// }   		
+    	// }  
     },
 
     // Various Dev Server settings

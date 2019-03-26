@@ -15,7 +15,9 @@
 				最近去过
 			</div>
 		</section>
-		<ul>
+		<ul  v-infinite-scroll="throttle(loadMore,1000)"
+			infinite-scroll-disabled="loading"
+			infinite-scroll-distance="10">
 			<li v-for="(item,index) in list" class="box" :key="index">
 				<router-link :to="'/home/detail/'+index">
 				<div class="left">
@@ -34,17 +36,54 @@
 </template>
 
 <script>
+import { InfiniteScroll,Toast } from 'mint-ui';
 	import axios from "axios"
 	export default{
 		data(){
 			return{
-				list:[]
+				list:[],
+				loading:false,
+				page:1
 			}
 		},
-		created(){
-			axios.get("/findalls").then((res)=>{
-				this.list=res.data.data.cinemas;
-			})			
+		methods:{
+			throttle(handler,wait){
+				 var lasttime=0;
+				 return ()=>{
+					 var curent=+new Date();
+					 if(curent-lasttime>wait){
+						 handler.apply(this, arguments);
+						 lasttime=curent;
+					 }
+				 }
+			},
+			loadMore(){
+				if(this.page.length>=14){
+					Toast({
+					message:'已经到底了!!!',
+					position: 'middle',
+					duration: 1500
+					});
+					return;
+				}
+				var t=Toast({
+				  iconClass:'fa fa-spinner fa-pulse',
+				  position: 'middle',
+				  duration: -1
+				});
+				this.loading=true;
+				axios.get("http://47.102.208.83:3000/findalls",{params:{
+					 _page:this.page,
+					 _limit:15
+				}}
+				).then((res)=>{
+						 this.loading=false;
+						 this.page++;
+                         t.close();
+						 this.list=this.list.concat(res.data);  
+			  })	
+
+			}
 		}
 	}
 </script>

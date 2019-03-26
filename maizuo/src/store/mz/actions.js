@@ -2,7 +2,7 @@ import state from './state';
 import axios from 'axios';
 export default {
 	getdata(){
-		axios.get("/findInfo").then((res)=>{			
+		axios.get("http://47.102.208.83:3000/findInfo").then((res)=>{			
 			res.data.forEach((item)=>{
 				//处理演员列表
 				item.yy=item.yy.split(",")

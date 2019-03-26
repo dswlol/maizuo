@@ -3,13 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import store from './store'
-
 import axios from 'axios'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+Vue.use(MintUI)
 Vue.prototype.$axios=axios
-axios.defaults.baseURL="/api"
-axios.defaults.headers.post['Content-type']="application/json";
+// axios.defaults.baseURL="/api"
+axios.defaults.headers.post['Content-type']="text/plain";
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "clone-deep": "^4.0.1",
+    "mint-ui": "^2.2.13",
     "swiper": "^4.5.0",
     "vue": "^2.5.2",
     "vue-jsonp": "^0.1.8",

@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import qs from "qs"
 	export default {
 		data(){
 			return{
@@ -24,13 +25,9 @@
 		},
 		methods: {
 			zcc(){
-				this.$axios.post("/findName", {
-					"name": this.name,
-				}, {
-					headers: {
-						'Content-Type': 'application/json;charset=UTF-8'
-					}
-				}).then((res)=>{
+				this.$axios.get("http://47.102.208.83:3000/findName",{params:{
+					"name": this.name
+				}}).then((res)=>{
 					if(res.data.data.length!=0){
 						alert("用户名已注册")
 					}
@@ -38,25 +35,18 @@
 		},
 			
 			zc(){
-				this.$axios.post("/findName", {
+				this.$axios.get("http://47.102.208.83:3000/findName",{params:{
 					"name": this.name,
-				}, {
-					headers: {
-						'Content-Type': 'application/json;charset=UTF-8'
-					}
-				}).then((res)=>{
+				}}).then((res)=>{
 					if(res.data.data.length!=0){
 						alert("用户名已注册")
 					}else{
-						this.$axios.post("/adduser", {
+						this.$axios.get("http://47.102.208.83:3000/adduser", {params:{
 					"name": this.name,
 					"pwd": this.pwd
-				}, {
-					headers: {
-						'Content-Type': 'application/json;charset=UTF-8'
-					}
-				}).then((res)=>{
-						location.href="http://localhost:8080/#/home/user/denglu"			
+				}}).then((res)=>{
+						// location.href="http://localhost:8080/#/home/user/denglu"
+						this.$router.go(-1);			
 			})
 					}
 			})

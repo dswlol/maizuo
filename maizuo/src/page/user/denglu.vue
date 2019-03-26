@@ -28,15 +28,16 @@
 		
 		methods: {						
 			dl() {
-				this.$axios.post("/loadUser",{
+				this.$axios.get("http://47.102.208.83:3000/loadUser",{params:{
 				"name":this.name,
 				"pwd":this.pwd				
-			}).then((res) => {			
+			}}).then((res) => {			
 				console.log(res.data.data.length)
 				if(res.data.data.length!=0){
 						alert("登录成功")
 						sessionStorage.setItem("name", this.name);
-						location.href="http://localhost:8080/#/home/user/succsee"	
+						this.$router.push("/home/user/succsee");
+						// location.href="http://localhost:8080/#"	
 				}else{
 					alert("登录失败")
 				}
