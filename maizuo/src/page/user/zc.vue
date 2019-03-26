@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 import qs from "qs"
 	export default {
 		data(){
@@ -29,7 +30,11 @@ import qs from "qs"
 					"name": this.name
 				}}).then((res)=>{
 					if(res.data.data.length!=0){
-						alert("用户名已注册")
+						Toast({
+						  	message: '用户名已注册',
+						  	position: 'middle',
+						  	duration: 2000
+						});
 					}
 			})
 		},
@@ -39,7 +44,11 @@ import qs from "qs"
 					"name": this.name,
 				}}).then((res)=>{
 					if(res.data.data.length!=0){
-						alert("用户名已注册")
+						Toast({
+						  	message: '用户名已注册',
+						  	position: 'middle',
+						  	duration: 2000
+						});
 					}else{
 						this.$axios.get("http://47.102.208.83:3000/adduser", {params:{
 					"name": this.name,

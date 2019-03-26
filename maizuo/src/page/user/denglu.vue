@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
+	
 	export default {	
 		data() {
 			return {
@@ -34,12 +36,20 @@
 			}}).then((res) => {			
 				console.log(res.data.data.length)
 				if(res.data.data.length!=0){
-						alert("登录成功")
+						Toast({
+						  	message: '登录成功',
+						  	position: 'middle',
+						  	duration: 1000
+						});
 						sessionStorage.setItem("name", this.name);
 						this.$router.push("/home/user/succsee");
 						// location.href="http://localhost:8080/#"	
 				}else{
-					alert("登录失败")
+					Toast({
+						  	message: '登录失败',
+						  	position: 'middle',
+						  	duration: 1000
+						});
 				}
 			})
 				
